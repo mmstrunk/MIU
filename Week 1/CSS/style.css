@@ -44,3 +44,13 @@ body{
 form{
 	width: auto;
 }
+
+h3 {
+	border-color: black;
+	border-width: 1px;
+	border-radius: 25px 25px 25px 25px;  
+	background: black;
+	color: white;
+	margin: 5px;
+	text-align: center;
+}
