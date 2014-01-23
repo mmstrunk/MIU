@@ -93,9 +93,7 @@ btnGenre.addEventListener("click",function(e){
 	});
 	
 	win.add(table);
-	win.open();
-	
-	
+	win.open();	
 });
 
 var btnActor = Titanium.UI.createButton({
@@ -104,10 +102,38 @@ var btnActor = Titanium.UI.createButton({
 	width:'100%'	
 });
 
+btnActor.addEventListener("click",function(e){
+	
+});
+
 var btnIMDB = Titanium.UI.createButton({
 	title:'IMDB Rating',
 	top:300,
 	width:'100%'	
+});
+
+btnIMDB.addEventListener("click",function(e){
+	var section92 = Ti.UI.createTableViewSection({headerTitle: "9.2"});
+	var section90 = Ti.UI.createTableViewSection({headerTitle: "9.0"});
+	var section89 = Ti.UI.createTableViewSection({headerTitle: "8.9"});
+
+	for (var i=0;i<10;i++) {
+		if(newData.rating[i] == "9.2"){
+			section92.add(Ti.UI.createTableViewRow({title: newData.name[i]}));
+		} else if(newData.rating[i] == "9.0") {
+			section90.add(Ti.UI.createTableViewRow({title: newData.name[i]}));
+		} else if(newData.rating[i] == "8.9") {
+			section89.add(Ti.UI.createTableViewRow({title: newData.name[i]}));
+		}
+	}
+	
+	var table = Ti.UI.createTableView({
+	  backgroundColor:'white',
+	  data: [section92,section90,section89]
+	});
+	
+	win.add(table);
+	win.open();	
 });
 
 view.add(btnName);
