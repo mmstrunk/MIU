@@ -252,7 +252,7 @@ btnActor.addEventListener("click",function(e){
 	
 	var table = Ti.UI.createTableView({
 	  backgroundColor:'white',
-	  data: [sectionMovieName]
+	  data: [sectionActor]
 	});
 	
 	win.add(table);
